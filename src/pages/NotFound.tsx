@@ -1,0 +1,3 @@
+import { ArrowLeft, Home as HomeIcon } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+export function NotFound() { const navigate = useNavigate(); return <div className="container not-found"><span className="eyebrow-text">ERROR / 404</span><h1>Halaman ini<br/><em>nggak ketemu.</em></h1><p>Mungkin link-nya berubah atau memang belum ada.</p><div className="hero-actions"><Link to="/" className="button button-primary"><HomeIcon size={16}/> Ke halaman utama</Link><button className="button button-quiet" onClick={()=>navigate(-1)}><ArrowLeft size={16}/> Kembali</button></div><div className="not-found-number">404</div></div> }
