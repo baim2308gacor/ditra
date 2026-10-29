@@ -21,6 +21,7 @@ export default async function handler(req, res) {
   try {
     const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
     const completion = await groq.chat.completions.create({
+      // GPT-OSS model is selected in source, not an environment variable.
       model: 'openai/gpt-oss-20b',
       messages: [{ role: 'system', content: PROFILE }, ...safeMessages],
       temperature: 0.4,
